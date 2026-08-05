@@ -9,7 +9,7 @@ from tools import run_sql_query
 # The OpenAI SDK automatically appends '/chat/completions' to the base URL
 client = OpenAI(
     base_url="https://api.groq.com/openai/v1", 
-    api_key="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"
+    api_key="put_api_key_here"
 )
 
 SYSTEM_PROMPT = """You are an autonomous data agent. You have access to a SQL database tool.
