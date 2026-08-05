@@ -3,27 +3,26 @@
 ## Autonomous Enterprise Data Agent with Governance-as-Code ML Critic
 An autonomous, local-first data retrieval agent designed to abstract database complexities via natural language processing, equipped with a custom Governance-as-Code Machine Learning Critic that delivers real-time risk assessment, security guardrails, and self-correction loops.
 
-                  [ Enterprise Intake Flow ]
-                               │
-                               ▼
-  ┌─────────────────────────────────────────────────────────┐
-  │                   Agent Reasoning Loop                  │
-  │     (Dynamic Metadata Population via Schema Memory)     │
-  └────────────────────────────┬────────────────────────────┘
-                               │
-                               ▼
-  ┌─────────────────────────────────────────────────────────┐
-  │                 Governance-as-Code Layer                │
-  │     (ML Critic Real-Time Inherent Risk Scoring Engine)  │
-  └────────────────────────────┬────────────────────────────┘
-                               │
-                ┌──────────────┴──────────────┐
-                ▼ (High Risk Score)           ▼ (Low Risk Score)
-    ┌───────────────────────┐     ┌───────────────────────┐
-    │     Route to Block/   │     │  Automated Event-     │
-    │   Self-Correction Loop│     │   Driven Provisioning │
-    └───────────────────────┘     └───────────────────────┘
+```mermaid
+graph TD
+    %% Define Styles
+    classDef main fill:#f9f9f9,stroke:#333,stroke-width:2px;
+    classDef logic fill:#e1f5fe,stroke:#03a9f4,stroke-width:2px;
+    classDef block fill:#ffebee,stroke:#ef5350,stroke-width:2px;
+    classDef pass fill:#e8f5e9,stroke:#4caf50,stroke-width:2px;
 
+    A[Enterprise Intake Flow] --> B[Agent Reasoning Loop<br><i>Dynamic Metadata Population via Schema Memory</i>]
+    B --> C[Governance-as-Code Layer<br><i>ML Critic Real-Time Inherent Risk Scoring Engine</i>]
+    
+    C -->|High Risk Score| D[Route to Block/<br>Self-Correction Loop]
+    C -->|Low Risk Score| E[Automated Event-<br>Driven Provisioning]
+
+    %% Apply Styles
+    class A main;
+    class B,C logic;
+    class D block;
+    class E pass;
+```
 ------------------------------
 ## 🎯 Direct Alignment with Your Team's Needs
 This project serves as a production-level proof-of-concept directly matching your core architecture roadmap:
